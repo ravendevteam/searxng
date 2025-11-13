@@ -51,3 +51,22 @@
     margin-top: 6em;
   }
 }
+
+// Invert the logo color in light theme
+:root {
+  .index .title {
+    filter: invert(1);
+  }
+}
+
+:root.theme-dark {
+  .index .title {
+    filter: none;
+  }
+}
+
+:root.theme-black {
+  .index .title {
+    filter: none;
+  }
+}
