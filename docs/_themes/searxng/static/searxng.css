@@ -17,7 +17,7 @@ p.version-warning {
 aside.sidebar {
   background-color: whitesmoke;
   border-color: lightsteelblue;
-  border-radius: 3pt;
+  border-radius: 0;
 }
 
 div.sphinxsidebar p.caption {
@@ -44,7 +44,7 @@ div.admonition, div.topic, nav.contents, div.toctree-wrapper {
   background-color: #fafafa;
   margin: 8px 0px;
   padding: 1em;
-  border-radius: 3pt 0 0 3pt;
+  border-radius: 0;
   border-top: none;
   border-right: none;
   border-bottom: none;
