@@ -125,11 +125,11 @@ export default {
     // SearXNG brand (static)
     plg_svg2png([
       {
-        src: `${PATH.brand}/searxng-wordmark.svg`,
+        src: `${PATH.brand}/raven-icon.svg`,
         dest: `${PATH.dist}/img/favicon.png`
       },
       {
-        src: `${PATH.brand}/searxng.svg`,
+        src: `${PATH.brand}/raven.svg`,
         dest: `${PATH.dist}/img/searxng.png`
       }
     ]),
@@ -138,7 +138,7 @@ export default {
     plg_svg2svg(
       [
         {
-          src: `${PATH.brand}/searxng.svg`,
+          src: `${PATH.brand}/raven.svg`,
           dest: `${PATH.dist}/img/searxng.svg`
         },
         {
@@ -153,7 +153,7 @@ export default {
     plg_svg2svg(
       [
         {
-          src: `${PATH.brand}/searxng-wordmark.svg`,
+          src: `${PATH.brand}/raven-icon.svg`,
           dest: `${PATH.dist}/img/favicon.svg`
         }
       ],
@@ -164,7 +164,7 @@ export default {
     plg_svg2svg(
       [
         {
-          src: `${PATH.brand}/searxng-wordmark.svg`,
+          src: `${PATH.brand}/raven-icon.svg`,
           dest: `${PATH.templates}/searxng-wordmark.min.svg`
         }
       ],
