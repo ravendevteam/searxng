@@ -154,8 +154,10 @@ button.category_button {
   width: 1.8rem;
   margin: 0;
   padding: 0.8rem 0.2rem;
-  background: none repeat scroll 0 0 var(--color-search-background);
-  border: none;
+  background: transparent;
+  border-style: solid;
+  border-width: 1px 0;
+  border-color: var(--border-color);
   outline: none;
   color: var(--color-search-font);
   font-size: 1.1rem;
@@ -178,12 +180,20 @@ html.no-js #clear_search.hide_if_nojs {
 #send_search {
   display: block;
   margin: 0;
-  background: none repeat scroll 0 0 var(--color-search-background);
-  border: none;
+  background: transparent;
   outline: none;
+  border-style: solid;
+  border-color: var(--border-color);
   color: var(--color-search-font);
   font-size: 1.1rem;
   z-index: 100;
+}
+
+#q {
+  border-width: 1px 0 1px 1px;
+}
+#send_search {
+  border-width: 1px 1px 1px 0;
 }
 
 #q {
