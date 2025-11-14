@@ -390,3 +390,30 @@ html.no-js #clear_search.hide_if_nojs {
   border: 1px solid var(--color-favicon-border-color);
   display: flex;
 }
+
+// Invert the logo color in light theme
+:root {
+  #search_logo {
+    filter: invert(1);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root.theme-auto {
+    #search_logo {
+      filter: none !important;
+    }
+  }
+}
+
+:root.theme-dark {
+  #search_logo {
+    filter: none !important;
+  }
+}
+
+:root.theme-black {
+  #search_logo {
+    filter: none !important;
+  }
+}
