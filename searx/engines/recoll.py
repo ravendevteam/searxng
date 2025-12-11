@@ -38,9 +38,10 @@ Implementations
 import typing as t
 
 from datetime import date, timedelta
-from urllib.parse import urlencode, quote
+from urllib.parse import urlencode
 
 from searx.result_types import EngineResults
+from searx.utils import html_to_text
 
 if t.TYPE_CHECKING:
     from searx.extended_types import SXNG_Response
@@ -122,23 +123,25 @@ def response(resp: "SXNG_Response") -> EngineResults:
 
         url = result.get("url", "").replace("file://" + mount_prefix, dl_prefix)
 
-        mtype = subtype = result.get("mime", "")
+        mtype = subtype = result.get("mtype", "")
         if mtype:
             mtype, subtype = (mtype.split("/", 1) + [""])[:2]
 
         # facilitate preview support for known mime types
         thumbnail = embedded = ""
         if mtype in ["audio", "video"]:
-            embedded_url = '<{ttype} controls height="166px" ' + 'src="{url}" type="{mtype}"></{ttype}>'
-            embedded = embedded_url.format(ttype=mtype, url=quote(url.encode("utf8"), "/:"), mtype=result["mtype"])
+            embedded = url
         if mtype in ["image"] and subtype in ["bmp", "gif", "jpeg", "png"]:
             thumbnail = url
+
+        # remove HTML from snippet
+        content = html_to_text(result.get("snippet", ""))
 
         res.add(
             res.types.File(
                 title=result.get("label", ""),
                 url=url,
-                content=result.get("snippet", ""),
+                content=content,
                 size=result.get("size", ""),
                 filename=result.get("filename", ""),
                 abstract=result.get("abstract", ""),

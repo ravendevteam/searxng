@@ -124,8 +124,6 @@ ui:
   # query_in_title: When true, the result page's titles contains the query
   # it decreases the privacy, since the browser can records the page titles.
   query_in_title: false
-  # infinite_scroll: When true, automatically loads the next page when scrolling to bottom of the current page.
-  infinite_scroll: false
   # ui theme
   default_theme: simple
   # center the results ?
@@ -162,7 +160,6 @@ ui:
 #     - locale
 #     - theme
 #     - results_on_new_tab
-#     - infinite_scroll
 #     - search_on_category_select
 #     - method
 #     - image_proxy
@@ -214,6 +211,7 @@ outgoing:
   #    - 1.1.1.2
   #    - fe80::/126
 
+
 # Plugin configuration, for more details see
 #   https://docs.searxng.org/admin/settings/settings_plugins.html
 #
@@ -221,6 +219,9 @@ plugins:
 
   searx.plugins.calculator.SXNGPlugin:
     active: true
+
+  searx.plugins.infinite_scroll.SXNGPlugin:
+    active: false
 
   searx.plugins.hash_plugin.SXNGPlugin:
     active: true
@@ -1058,6 +1059,12 @@ engines:
     play_categ: movies
     disabled: true
 
+  - name: grokipedia
+    engine: grokipedia
+    shortcut: gp
+    disabled: true
+    inactive: true
+
   - name: material icons
     engine: material_icons
     shortcut: mi
@@ -1286,6 +1293,11 @@ engines:
       require_api_key: false
       results: HTML
 
+  - name: lucide
+    engine: lucide
+    shortcut: luc
+    timeout: 3.0
+
   - name: marginalia
     engine: marginalia
     shortcut: mar
@@ -1419,22 +1431,6 @@ engines:
       use_official_api: true
       require_api_key: false
       results: JSON
-
-  # https://docs.searxng.org/dev/engines/online/mullvad_leta.html
-  - name: mullvadleta
-    engine: mullvad_leta
-    disabled: true
-    leta_engine: google
-    categories: [general, web]
-    shortcut: ml
-
-  - name: mullvadleta brave
-    engine: mullvad_leta
-    network: mullvadleta
-    disabled: true
-    leta_engine: brave
-    categories: [general, web]
-    shortcut: mlb
 
   - name: odysee
     engine: odysee
@@ -1626,6 +1622,7 @@ engines:
     engine: pixiv
     disabled: true
     inactive: true
+    remove_ai_images: false
     pixiv_image_proxies:
       - https://pximg.example.org
       # A proxy is required to load the images. Hosting an image proxy server
@@ -2120,22 +2117,21 @@ engines:
     search_type: web
     shortcut: yd
     disabled: true
-    inactive: true
 
   - name: yandex images
     engine: yandex
+    network: yandex
     categories: images
     search_type: images
     shortcut: ydi
     disabled: true
-    inactive: true
 
   - name: yandex music
     engine: yandex_music
+    network: yandex
     shortcut: ydm
     disabled: true
     # https://yandex.com/support/music/access.html
-    inactive: true
 
   - name: yahoo
     engine: yahoo
