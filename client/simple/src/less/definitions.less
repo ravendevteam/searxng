@@ -255,31 +255,38 @@
   --color-favicon-border-color: #ccc;
 }
 
-.black-themes() {
-  --color-base-background: #000;
-  --color-base-background-mobile: #000;
-  --color-header-background: #000;
-  --color-footer-background: #000;
-  --color-sidebar-background: #000;
+.carbon-theme() {
+  --color-base-background: #060707;
+
+  --color-header-background: #08090a;
+  --color-base-background-mobile: var(--color-base-background);
+  --color-footer-background: var(--color-header-background);
+  --color-sidebar-background: var(--color-header-background);
+  --color-search-background: var(--color-header-background);
+
+  --border-color: #121314;
+  --color-footer-border: var(--border-color);
+  --color-header-border: var(--border-color);
+  --color-sidebar-border: var(--border-color);
 }
 
 /// Dark Theme (autoswitch based on device pref)
 @media (prefers-color-scheme: dark) {
   :root.theme-auto {
     .dark-themes();
-    .black-themes();
+    .carbon-theme();
   }
 }
 
 // Dark Theme by preferences
 :root.theme-dark {
   .dark-themes();
-  .black-themes();
+  .carbon-theme();
 }
 
 :root.theme-black {
   .dark-themes();
-  .black-themes();
+  .carbon-theme();
 }
 
 /// General Size
