@@ -162,7 +162,7 @@ def response(resp) -> EngineResults:
         if resp.status_code == 422:
             s_key = suggestions.get('key', '')
             if s_key == "Invalid image URL":
-                # test https://docs.searxng.org/_static/searxng-wordmark.svg
+                # test https://docs.searxng.org/_static/raven-icon.svg
                 message = FORMAT_NOT_SUPPORTED
             elif s_key == 'NO_SIGNATURE_ERROR':
                 # test https://pngimg.com/uploads/dot/dot_PNG4.png

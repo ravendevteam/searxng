@@ -29,7 +29,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-12-05 10:19+0000\n"
+"POT-Creation-Date: 2026-03-24 18:43+0000\n"
 "PO-Revision-Date: 2025-10-22 02:09+0000\n"
 "Last-Translator: return42 <return42@noreply.codeberg.org>\n"
 "Language: bn\n"
@@ -39,7 +39,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.17.0\n"
+"Generated-By: Babel 2.18.0\n"
 
 #. CONSTANT_NAMES['NO_SUBGROUPING']
 #: searx/searxng.msg
@@ -82,7 +82,7 @@ msgid "videos"
 msgstr "ভিডিও"
 
 #. CATEGORY_NAMES['RADIO']
-#: searx/engines/radio_browser.py:142 searx/searxng.msg
+#: searx/engines/radio_browser.py:146 searx/searxng.msg
 msgid "radio"
 msgstr "বেতার"
 
@@ -552,28 +552,28 @@ msgstr "বন্ধ"
 msgid "answered"
 msgstr "উত্তরকৃত"
 
-#: searx/webapp.py:328
+#: searx/webapp.py:327
 msgid "No item found"
 msgstr "কোন আইটেম পাওয়া যায়নি"
 
-#: searx/engines/qwant.py:299
-#: searx/templates/simple/result_templates/images.html:23 searx/webapp.py:330
+#: searx/engines/qwant.py:291
+#: searx/templates/simple/result_templates/images.html:23 searx/webapp.py:329
 msgid "Source"
 msgstr "উৎস"
 
-#: searx/webapp.py:332
+#: searx/webapp.py:331
 msgid "Error loading the next page"
 msgstr "পরবর্তী পৃষ্ঠাটি লোড করায় ত্রুটি দেখা যাচ্ছে"
 
-#: searx/webapp.py:481 searx/webapp.py:882
+#: searx/webapp.py:480 searx/webapp.py:881
 msgid "Invalid settings, please edit your preferences"
 msgstr "অকেজো সেটিংস, অনুগ্রহ করে আপনার পছন্দগুলি সম্পাদনা করুন"
 
-#: searx/webapp.py:497
+#: searx/webapp.py:496
 msgid "Invalid settings"
 msgstr "অকেজো সেটিংস"
 
-#: searx/webapp.py:574 searx/webapp.py:664
+#: searx/webapp.py:573 searx/webapp.py:663
 msgid "search error"
 msgstr "সার্চ ত্রুটি"
 
@@ -652,7 +652,12 @@ msgstr "বিভিন্ন এলোমেলো মান তৈরি ক�
 msgid "Compute {func} of the arguments"
 msgstr "{func} এই আদেশ কম্পিউট করো"
 
-#: searx/engines/openstreetmap.py:156
+#: searx/engines/boardreader.py:107
+#, python-brace-format
+msgid "Posted by {author}"
+msgstr ""
+
+#: searx/engines/openstreetmap.py:155
 msgid "Show route in map .."
 msgstr "মানচিত্রে সেরা রাস্তা দেখাও .।"
 
@@ -665,25 +670,21 @@ msgstr "{title} (অচল)"
 msgid "This entry has been superseded by"
 msgstr "এই এনট্রিটি দ্বারা বাতিল করা হয়েছে৷"
 
-#: searx/engines/qwant.py:301
+#: searx/engines/qwant.py:293
 msgid "Channel"
 msgstr "চ্যানেল"
 
-#: searx/engines/radio_browser.py:144
+#: searx/engines/radio_browser.py:148
 msgid "bitrate"
 msgstr "বিটরেট"
 
-#: searx/engines/radio_browser.py:145
+#: searx/engines/radio_browser.py:149
 msgid "votes"
 msgstr "ভোট"
 
-#: searx/engines/radio_browser.py:146
+#: searx/engines/radio_browser.py:150
 msgid "clicks"
 msgstr "ক্লিক সংখ্যা"
-
-#: searx/engines/seekr.py:193 searx/engines/zlibrary.py:78
-msgid "Language"
-msgstr "ভাষা"
 
 #: searx/engines/semantic_scholar.py:141
 #, python-brace-format
@@ -717,10 +718,14 @@ msgid "The image could not be downloaded."
 msgstr "ছবিটি ডাউনলোড করা যায়নি ।"
 
 #: searx/engines/zlibrary.py:79
+msgid "Language"
+msgstr "ভাষা"
+
+#: searx/engines/zlibrary.py:80
 msgid "Book rating"
 msgstr "বই পর্যালোচনা"
 
-#: searx/engines/zlibrary.py:80
+#: searx/engines/zlibrary.py:81
 msgid "File quality"
 msgstr "নথি মান"
 
@@ -876,7 +881,7 @@ msgid "Donate"
 msgstr "দান করুন"
 
 #: searx/templates/simple/base.html:55 searx/templates/simple/base.html:57
-#: searx/templates/simple/preferences.html:156
+#: searx/templates/simple/preferences.html:152
 msgid "Preferences"
 msgstr "পছন্দসমূহ"
 
@@ -897,7 +902,7 @@ msgstr "সোর্স কোড"
 msgid "Issue tracker"
 msgstr "সমস্যা অনুসরণ"
 
-#: searx/templates/simple/base.html:71 searx/templates/simple/stats.html:18
+#: searx/templates/simple/base.html:71 searx/templates/simple/stats.html:17
 msgid "Engine stats"
 msgstr "ইঞ্জিন পরিসংখ্যান"
 
@@ -937,30 +942,6 @@ msgstr "লেখক"
 msgid "cached"
 msgstr "ক্যাশকৃত"
 
-#: searx/templates/simple/new_issue.html:64
-msgid "Start submitting a new issue on GitHub"
-msgstr "GitHub এ একটি নতুন সমস্যা জমা দেওয়া শুরু করুন"
-
-#: searx/templates/simple/new_issue.html:66
-msgid "Please check for existing bugs about this engine on GitHub"
-msgstr "GitHub এ এই ইঞ্জিন সম্পর্কে বিদ্যমান বাগগুলির জন্য দয়া করে পরীক্ষা করুন"
-
-#: searx/templates/simple/new_issue.html:69
-msgid "I confirm there is no existing bug about the issue I encounter"
-msgstr ""
-"আমি নিশ্চিত করছি যে আমি যে সমস্যার সম্মুখীন হচ্ছি সে সম্পর্কে কোন "
-"বিদ্যমান বাগ নেই"
-
-#: searx/templates/simple/new_issue.html:71
-msgid "If this is a public instance, please specify the URL in the bug report"
-msgstr ""
-"যদি এটি একটি পাবলিক ইন্সট্যান্স হয়, তবে অনুগ্রহ করে বাগ রিপোর্টে URL টি "
-"উল্লেখ করুন"
-
-#: searx/templates/simple/new_issue.html:72
-msgid "Submit a new issue on Github including the above information"
-msgstr "উপরের তথ্য সহ Github এ একটি নতুন সমস্যা জমা দিন"
-
 #: searx/templates/simple/preferences.html:65
 msgid "No HTTPS"
 msgstr "HTTPS নেই"
@@ -980,71 +961,67 @@ msgid "!bang for its categories"
 msgstr "!bang এই বিভাগের"
 
 #: searx/templates/simple/preferences.html:102
-#: searx/templates/simple/stats.html:64
+#: searx/templates/simple/stats.html:63
 msgid "Median"
 msgstr "মধ্যবর্তী"
 
 #: searx/templates/simple/preferences.html:103
-#: searx/templates/simple/stats.html:70
+#: searx/templates/simple/stats.html:69
 msgid "P80"
 msgstr "P80"
 
 #: searx/templates/simple/preferences.html:104
-#: searx/templates/simple/stats.html:76
+#: searx/templates/simple/stats.html:75
 msgid "P95"
 msgstr "P95"
 
-#: searx/templates/simple/preferences.html:136
-msgid "Failed checker test(s): "
-msgstr "পরীক্ষা(গুলি) ব্যর্থ: "
-
-#: searx/templates/simple/preferences.html:138
+#: searx/templates/simple/preferences.html:134
 msgid "Errors:"
 msgstr "ত্রুটি:"
 
-#: searx/templates/simple/preferences.html:160
+#: searx/templates/simple/preferences.html:156
 msgid ""
 "This is a preview of the settings used by the 'Search URL' you used to "
 "get here."
 msgstr ""
 
-#: searx/templates/simple/preferences.html:162
+#: searx/templates/simple/preferences.html:158
 msgid "Press save to copy these preferences to your browser."
 msgstr ""
 
-#: searx/templates/simple/preferences.html:163
+#: searx/templates/simple/preferences.html:159
 msgid "Click here to view your browser preferences instead:"
 msgstr ""
 
-#: searx/templates/simple/preferences.html:173
+#: searx/templates/simple/preferences.html:169
 msgid "General"
 msgstr "সাধারণ"
 
-#: searx/templates/simple/preferences.html:176
+#: searx/templates/simple/preferences.html:172
 msgid "Default categories"
 msgstr "ডিফল্ট বিভাগ"
 
-#: searx/templates/simple/preferences.html:204
+#: searx/templates/simple/preferences.html:200
 msgid "User interface"
 msgstr "ব‍্যবহারকারীর সম্মুখে প্রদর্শিত"
 
-#: searx/templates/simple/preferences.html:224
+#: searx/templates/simple/preferences.html:220
 msgid "Privacy"
 msgstr "গোপনীয়তা"
 
-#: searx/templates/simple/preferences.html:239
+#: searx/templates/simple/preferences.html:235
 msgid "Engines"
 msgstr "ইঞ্জিন"
 
-#: searx/templates/simple/preferences.html:241
+#: searx/templates/simple/preferences.html:237
 msgid "Currently used search engines"
 msgstr "বর্তমানে ব্যবহৃত সার্চ ইঞ্জিন"
 
-#: searx/templates/simple/preferences.html:250
+#: searx/templates/simple/preferences.html:246
 msgid "Special Queries"
 msgstr "বিশেষ প্রশ্ন"
 
-#: searx/templates/simple/preferences.html:258
+#: searx/templates/simple/preferences.html:254
 msgid "Cookies"
 msgstr "কুকি"
 
@@ -1087,95 +1064,83 @@ msgstr "পরিষ্কার"
 msgid "search"
 msgstr "অনুসন্ধান"
 
-#: searx/templates/simple/stats.html:21
+#: searx/templates/simple/stats.html:20
 msgid "There is currently no data available. "
 msgstr "বর্তমানে কোন তথ্য পাওয়া যায়নি."
 
 #: searx/templates/simple/preferences/engines.html:24
-#: searx/templates/simple/stats.html:25
+#: searx/templates/simple/stats.html:24
 msgid "Engine name"
 msgstr "ইঞ্জিনের নাম"
 
-#: searx/templates/simple/stats.html:26
+#: searx/templates/simple/stats.html:25
 msgid "Scores"
 msgstr "স্কোর"
 
-#: searx/templates/simple/stats.html:27
+#: searx/templates/simple/stats.html:26
 msgid "Result count"
 msgstr "ফলাফল গণনা"
 
 #: searx/templates/simple/elements/engines_msg.html:7
 #: searx/templates/simple/preferences/engines.html:31
-#: searx/templates/simple/stats.html:28
+#: searx/templates/simple/stats.html:27
 msgid "Response time"
 msgstr "প্রতিক্রিয়া সময়"
 
 #: searx/templates/simple/preferences/engines.html:35
-#: searx/templates/simple/stats.html:29
+#: searx/templates/simple/stats.html:28
 msgid "Reliability"
 msgstr "নির্ভরযোগ্যতা"
 
-#: searx/templates/simple/stats.html:59
+#: searx/templates/simple/stats.html:58
 msgid "Total"
 msgstr "মোট"
 
-#: searx/templates/simple/stats.html:60
+#: searx/templates/simple/stats.html:59
 msgid "HTTP"
 msgstr "এইচটিটিপি"
 
-#: searx/templates/simple/stats.html:61
+#: searx/templates/simple/stats.html:60
 msgid "Processing"
 msgstr "প্রক্রিয়ারত"
 
-#: searx/templates/simple/stats.html:99
+#: searx/templates/simple/stats.html:98
 msgid "Warnings"
 msgstr "সতর্কতা"
 
-#: searx/templates/simple/stats.html:99
+#: searx/templates/simple/stats.html:98
 msgid "Errors and exceptions"
 msgstr "ত্রুটি এবং ব্যতিক্রম"
 
-#: searx/templates/simple/stats.html:105
+#: searx/templates/simple/stats.html:104
 msgid "Exception"
 msgstr "ব্যতিক্রম"
 
-#: searx/templates/simple/stats.html:107
+#: searx/templates/simple/stats.html:106
 msgid "Message"
 msgstr "বার্তা"
 
-#: searx/templates/simple/stats.html:109
+#: searx/templates/simple/stats.html:108
 msgid "Percentage"
 msgstr "শতাংশ"
 
-#: searx/templates/simple/stats.html:111
+#: searx/templates/simple/stats.html:110
 msgid "Parameter"
 msgstr "প্যারামিটার"
 
 #: searx/templates/simple/result_templates/code.html:29
 #: searx/templates/simple/result_templates/file.html:24
-#: searx/templates/simple/stats.html:119
+#: searx/templates/simple/stats.html:118
 msgid "Filename"
 msgstr "ফাইলের নাম"
 
-#: searx/templates/simple/stats.html:120
+#: searx/templates/simple/stats.html:119
 msgid "Function"
 msgstr "ফাংশন"
 
-#: searx/templates/simple/stats.html:121
+#: searx/templates/simple/stats.html:120
 msgid "Code"
 msgstr "কোড"
-
-#: searx/templates/simple/stats.html:128
-msgid "Checker"
-msgstr "পরীক্ষক"
-
-#: searx/templates/simple/stats.html:131
-msgid "Failed test"
-msgstr "পরীক্ষায় ব্যর্থ"
-
-#: searx/templates/simple/stats.html:132
-msgid "Comment(s)"
-msgstr "মন্তব্য"
 
 #: searx/templates/simple/answer/translations.html:12
 #: searx/templates/simple/preferences/answerers.html:8
@@ -2147,4 +2112,39 @@ msgstr "ভিডিও লুকিয়ে ফেলুন"
 #~ " scrolling to the bottom of the "
 #~ "current page"
 #~ msgstr ""
+
+#~ msgid "Failed checker test(s): "
+#~ msgstr "পরীক্ষা(গুলি) ব্যর্থ: "
+
+#~ msgid "Checker"
+#~ msgstr "পরীক্ষক"
+
+#~ msgid "Failed test"
+#~ msgstr "পরীক্ষায় ব্যর্থ"
+
+#~ msgid "Comment(s)"
+#~ msgstr "মন্তব্য"
+
+#~ msgid "Start submitting a new issue on GitHub"
+#~ msgstr "GitHub এ একটি নতুন সমস্যা জমা দেওয়া শুরু করুন"
+
+#~ msgid "Please check for existing bugs about this engine on GitHub"
+#~ msgstr ""
+#~ "GitHub এ এই ইঞ্জিন সম্পর্কে বিদ্যমান "
+#~ "বাগগুলির জন্য দয়া করে পরীক্ষা করুন"
+
+#~ msgid "I confirm there is no existing bug about the issue I encounter"
+#~ msgstr ""
+#~ "আমি নিশ্চিত করছি যে আমি যে সমস্যার"
+#~ " সম্মুখীন হচ্ছি সে সম্পর্কে কোন "
+#~ "বিদ্যমান বাগ নেই"
+
+#~ msgid "If this is a public instance, please specify the URL in the bug report"
+#~ msgstr ""
+#~ "যদি এটি একটি পাবলিক ইন্সট্যান্স হয়, "
+#~ "তবে অনুগ্রহ করে বাগ রিপোর্টে URL "
+#~ "টি উল্লেখ করুন"
+
+#~ msgid "Submit a new issue on Github including the above information"
+#~ msgstr "উপরের তথ্য সহ Github এ একটি নতুন সমস্যা জমা দিন"
 

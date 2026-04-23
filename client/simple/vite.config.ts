@@ -34,7 +34,7 @@ const svg2svg_favicon_opts: Config = {
 };
 
 export default {
-  base: "/static/themes/simple/",
+  base: "./",
   publicDir: "static/",
 
   build: {
@@ -74,6 +74,9 @@ export default {
             .normalize("NFD")
             .replace(/[^a-zA-Z0-9.-]/g, "_")
             .toLowerCase();
+        },
+        comments: {
+          legal: true
         }
       }
     }
@@ -128,6 +131,28 @@ export default {
         dest: `${PATH.dist}/img/searxng.png`
       }
     ]),
+
+    // SearXNG PWA Icons (static)
+    plg_svg2png(
+      [
+        {
+          src: `${PATH.brand}/raven-icon.svg`,
+          dest: `${PATH.dist}/img/512.png`
+        }
+      ],
+      512,
+      512
+    ),
+    plg_svg2png(
+      [
+        {
+          src: `${PATH.brand}/raven-icon.svg`,
+          dest: `${PATH.dist}/img/192.png`
+        }
+      ],
+      192,
+      192
+    ),
 
     // -- svg
     plg_svg2svg(

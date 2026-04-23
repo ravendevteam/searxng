@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.3.11/schema.json",
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "files": {
     "ignoreUnknown": true,
     "includes": ["**", "!node_modules"]
@@ -31,6 +31,8 @@
       "complexity": {
         "noForEach": "error",
         "noImplicitCoercions": "error",
+        "noUselessCatchBinding": "error",
+        "noUselessUndefined": "error",
         "useSimplifiedLogicExpression": "error"
       },
       "correctness": {
@@ -41,20 +43,20 @@
       },
       "nursery": {
         "noContinue": "warn",
-        "noDeprecatedImports": "warn",
         "noEqualsToNull": "warn",
         "noFloatingPromises": "warn",
         "noForIn": "warn",
-        "noImportCycles": "warn",
         "noIncrementDecrement": "warn",
         "noMisusedPromises": "warn",
         "noMultiAssign": "warn",
         "noMultiStr": "warn",
+        "noNestedPromises": "warn",
         "noParametersOnlyUsedInRecursion": "warn",
+        "noRedundantDefaultExport": "warn",
         "noReturnAssign": "warn",
-        "noUselessCatchBinding": "warn",
-        "noUselessUndefined": "warn",
+        "noUselessReturn": "off",
         "useAwaitThenable": "off",
+        "useConsistentEnumValueType": "warn",
         "useDestructuring": "warn",
         "useExhaustiveSwitchCases": "warn",
         "useExplicitType": "off",
@@ -143,8 +145,10 @@
         "noAlert": "error",
         "noBitwiseOperators": "error",
         "noConstantBinaryExpressions": "error",
+        "noDeprecatedImports": "error",
         "noEmptyBlockStatements": "error",
         "noEvolvingTypes": "error",
+        "noImportCycles": "error",
         "noUnassignedVariables": "error",
         "noVar": "error",
         "useNumberToFixedDigitsArgument": "error",

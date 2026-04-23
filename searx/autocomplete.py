@@ -1,11 +1,13 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 """This module implements functions needed for the autocompleter."""
+
 # pylint: disable=use-dict-literal
+import string
+import random
 
 import json
-import html
 import typing as t
-from urllib.parse import urlencode, quote_plus
+from urllib.parse import urlencode
 
 import lxml.etree
 import lxml.html
@@ -16,7 +18,7 @@ from searx.engines import (
     engines,
     google,
 )
-from searx.network import get as http_get, post as http_post  # pyright: ignore[reportUnknownVariableType]
+from searx.network import get as http_get, post as http_post
 from searx.exceptions import SearxEngineResponseException
 from searx.utils import extr, gen_useragent
 
@@ -51,6 +53,26 @@ def baidu(query: str, _sxng_locale: str) -> list[str]:
         if 'g' in data:
             for item in data['g']:
                 results.append(item['q'])
+    return results
+
+
+def bing(query: str, _sxng_locale: str) -> list[str]:
+    # bing search autocompleter
+    base_url = "https://www.bing.com/AS/Suggestions?"
+    # cvid has to be a 32 character long string consisting of numbers and uppsercase characters
+    cvid = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(32))
+    response = get(base_url + urlencode({'qry': query, 'csr': 1, 'cvid': cvid}))
+    results: list[str] = []
+
+    if response.ok:
+        data: dict[str, t.Any] = response.json()
+        if 's' in data:
+            for item in data['s']:
+                completion: str = item['q']
+                # bing uses PUA unicode characters to highlight parts of the query
+                # we have to remove these manually (U+E000 and U+E001)
+                completion = completion.replace("\ue000", "").replace("\ue001", "")
+                results.append(completion)
     return results
 
 
@@ -268,18 +290,6 @@ def startpage(query: str, sxng_locale: str) -> list[str]:
     return results
 
 
-def stract(query: str, _sxng_locale: str) -> list[str]:
-    # stract autocompleter (beta)
-    url = f"https://stract.com/beta/api/autosuggest?q={quote_plus(query)}"
-    resp = post(url)
-    results: list[str] = []
-
-    if resp.ok:
-        results = [html.unescape(suggestion['raw']) for suggestion in resp.json()]
-
-    return results
-
-
 def swisscows(query: str, _sxng_locale: str) -> list[str]:
     # swisscows autocompleter
     url = 'https://swisscows.ch/api/suggest?{query}&itemsCount=5'
@@ -344,6 +354,7 @@ def yandex(query: str, _sxng_locale: str) -> list[str]:
 backends: dict[str, t.Callable[[str, str], list[str]]] = {
     '360search': qihu360search,
     'baidu': baidu,
+    'bing': bing,
     'brave': brave,
     'dbpedia': dbpedia,
     'duckduckgo': duckduckgo,
@@ -355,7 +366,6 @@ backends: dict[str, t.Callable[[str, str], list[str]]] = {
     'seznam': seznam,
     'sogou': sogou,
     'startpage': startpage,
-    'stract': stract,
     'swisscows': swisscows,
     'wikipedia': wikipedia,
     'yandex': yandex,

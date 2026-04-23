@@ -36,6 +36,7 @@
 
   - ``360search``
   - ``baidu``
+  - ``bing``
   - ``brave``
   - ``dbpedia``
   - ``duckduckgo``
@@ -47,7 +48,6 @@
   - ``seznam``
   - ``sogou``
   - ``startpage``
-  - ``stract``
   - ``swisscows``
   - ``wikipedia``
   - ``yandex``
